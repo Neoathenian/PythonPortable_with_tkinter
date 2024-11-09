@@ -27,3 +27,9 @@ To create a PythonPortable environment from scratch, follow these steps:
      - DLL files: **`_tkinter.pyd`, `tcl86t.dll`, `tk86t.dll`, `zlib1.dll`** (for Python ≥ 3.12) → `PythonPortable\DLLs\` or **`PythonPortable\`** (this one in my case)
 
 For more details, refer to [this Stack Overflow thread](https://stackoverflow.com/questions/37710205/python-embeddable-zip-install-tkinter).
+
+
+Note: You may face issues when accessing files using PythonPortable. To solve this add this to you the beggining of your main.py:
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
